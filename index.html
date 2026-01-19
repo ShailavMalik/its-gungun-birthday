@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Happy Birthday ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Quicksand:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         COUNTDOWN LOCK SCREEN - Magical Waiting Experience
+    ═══════════════════════════════════════════════════════════════════ -->
+    <section id="lockScreen" class="lock-screen">
+        <!-- Animated Background Layers -->
+        <div class="lock-bg">
+            <div class="stars" id="stars"></div>
+            <div class="aurora"></div>
+            <div class="floating-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+                <div class="orb orb-4"></div>
+            </div>
+            <div class="particles-container" id="particles"></div>
+        </div>
+
+        <div class="lock-content">
+            <!-- Decorative Elements -->
+            <div class="lock-decoration">
+                <span class="deco-line left"></span>
+                <span class="deco-star">✦</span>
+                <span class="deco-line right"></span>
+            </div>
+
+            <div class="lock-icon-wrapper">
+                <div class="lock-icon-ring"></div>
+                <div class="lock-icon-ring ring-2"></div>
+                <div class="lock-icon">🎁</div>
+            </div>
+
+            <h1 class="lock-title">
+                <span class="title-line">Something</span>
+                <span class="title-line accent">magical</span>
+                <span class="title-line">is waiting for you</span>
+                <span class="title-line name-line">Gungun</span>
+            </h1>
+
+            <p class="lock-subtitle">
+                <span class="subtitle-icon">🌙</span>
+                Unlocking on 20th January
+                <span class="subtitle-icon">🌙</span>
+            </p>
+
+            <div class="countdown-wrapper">
+                <div class="countdown-glow"></div>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <span class="countdown-value" id="days">00</span>
+                        </div>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-separator">
+                        <span class="sep-dot"></span>
+                        <span class="sep-dot"></span>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <span class="countdown-value" id="hours">00</span>
+                        </div>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-separator">
+                        <span class="sep-dot"></span>
+                        <span class="sep-dot"></span>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <span class="countdown-value" id="minutes">00</span>
+                        </div>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-separator">
+                        <span class="sep-dot"></span>
+                        <span class="sep-dot"></span>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-card">
+                            <span class="countdown-value" id="seconds">00</span>
+                        </div>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lock-message">
+                <p>"Some gifts are worth the wait..."</p>
+            </div>
+
+            <div class="floating-elements">
+                <span class="float-element">♡</span>
+                <span class="float-element">✦</span>
+                <span class="float-element">♡</span>
+                <span class="float-element">✦</span>
+                <span class="float-element">♡</span>
+                <span class="float-element">✦</span>
+                <span class="float-element">♡</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         MAIN BIRTHDAY CONTENT - The Magical Reveal
+    ═══════════════════════════════════════════════════════════════════ -->
+    <main id="birthdayContent" class="birthday-content hidden">
+
+        <!-- Global Decorative Background -->
+        <div class="global-bg">
+            <div class="bg-gradient"></div>
+            <div class="bg-pattern"></div>
+            <div class="floating-shapes">
+                <div class="bg-shape shape-1"></div>
+                <div class="bg-shape shape-2"></div>
+                <div class="bg-shape shape-3"></div>
+                <div class="bg-shape shape-4"></div>
+                <div class="bg-shape shape-5"></div>
+            </div>
+        </div>
+
+        <!-- ─────────────────────────────────────────────────────────────
+             HERO SECTION - Grand Opening
+        ───────────────────────────────────────────────────────────── -->
+        <section class="hero" id="hero">
+            <div class="hero-particles" id="heroParticles"></div>
+
+            <div class="hero-content">
+                <div class="hero-badge animate-on-scroll">
+                    <span class="badge-star">✦</span>
+                    <span>January 20th</span>
+                    <span class="badge-star">✦</span>
+                </div>
+
+                <div class="hero-title-wrapper animate-on-scroll">
+                    <div class="title-decoration">
+                        <span class="td-line"></span>
+                        <span class="td-diamond">◇</span>
+                        <span class="td-line"></span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-word">Happy</span>
+                        <span class="title-word">Birthday</span>
+                    </h1>
+                    <div class="hero-sparkles">
+                        <span class="sparkle s1">✨</span>
+                        <span class="sparkle s2">✨</span>
+                        <span class="sparkle s3">✨</span>
+                    </div>
+                </div>
+
+                <h2 class="hero-name animate-on-scroll">
+                    <span class="name-prefix">Dear</span>
+                    <span class="name-text">Gungun</span>
+                </h2>
+
+                <div class="hero-divider animate-on-scroll">
+                    <span class="divider-wing left">═══</span>
+                    <span class="divider-heart">♡</span>
+                    <span class="divider-wing right">═══</span>
+                </div>
+
+                <div class="hero-quote animate-on-scroll">
+                    <p class="quote-line" data-delay="0">Some people shine loudly.</p>
+                    <p class="quote-line" data-delay="1">Some shine quietly.</p>
+                    <p class="quote-line highlight" data-delay="2">You do both — effortlessly.</p>
+                </div>
+
+                <div class="scroll-indicator animate-on-scroll">
+                    <div class="scroll-text">Scroll to discover more</div>
+                    <div class="scroll-line">
+                        <div class="scroll-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-side-decor left">
+                <span>✦</span><span>✦</span><span>✦</span>
+            </div>
+            <div class="hero-side-decor right">
+                <span>✦</span><span>✦</span><span>✦</span>
+            </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────────────────────────
+             PHOTO SECTION - Cherished Moment
+        ───────────────────────────────────────────────────────────── -->
+        <section class="photo-section" id="photo">
+            <div class="section-bg"></div>
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="header-icon">📸</span>
+                    <h3 class="section-title">A Moment Captured</h3>
+                    <p class="section-subtitle">Where memories become timeless</p>
+                </div>
+
+                <div class="photo-showcase animate-on-scroll">
+                    <div class="photo-frame-outer">
+                        <div class="frame-corner tl"></div>
+                        <div class="frame-corner tr"></div>
+                        <div class="frame-corner bl"></div>
+                        <div class="frame-corner br"></div>
+
+                        <div class="photo-frame">
+                            <div class="photo-glow"></div>
+                            <div class="photo-border"></div>
+                            <img src="photo.png" alt="Birthday Star" class="photo-image">
+                            <div class="photo-overlay"></div>
+                            <div class="photo-shimmer"></div>
+                        </div>
+                    </div>
+
+                    <div class="photo-decoration">
+                        <span class="pd-star">✦</span>
+                        <span class="pd-star">✦</span>
+                        <span class="pd-star">✦</span>
+                    </div>
+                </div>
+
+                <p class="photo-caption animate-on-scroll">
+                    <span class="caption-quote">"</span>
+                    The most beautiful things in life are not seen or touched — they are felt with the heart.
+                    <span class="caption-quote">"</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────────────────────────
+             ABOUT HER - The Beautiful Soul
+        ───────────────────────────────────────────────────────────── -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="header-icon">💫</span>
+                    <h3 class="section-title">What Makes You Special</h3>
+                    <p class="section-subtitle">The qualities that make you unforgettable</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card animate-on-scroll" data-index="1">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon-wrapper">
+                                <div class="icon-bg"></div>
+                                <span class="card-icon">🌸</span>
+                            </div>
+                            <h4>Pure Simplicity</h4>
+                            <div class="card-divider"></div>
+                            <p>In a world that's constantly trying to be louder, you choose gentleness. Your simplicity
+                                isn't ordinary — it's a rare form of elegance that touches everyone around you.</p>
+                        </div>
+                        <div class="card-shine"></div>
+                    </div>
+
+                    <div class="about-card animate-on-scroll" data-index="2">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon-wrapper">
+                                <div class="icon-bg"></div>
+                                <span class="card-icon">💝</span>
+                            </div>
+                            <h4>Helping Heart</h4>
+                            <div class="card-divider"></div>
+                            <p>You have this extraordinary gift of making everyone feel seen, valued, and cared for.
+                                Your willingness to help others is like a warm light in the coldest days.</p>
+                        </div>
+                        <div class="card-shine"></div>
+                    </div>
+
+                    <div class="about-card animate-on-scroll" data-index="3">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon-wrapper">
+                                <div class="icon-bg"></div>
+                                <span class="card-icon">🌙</span>
+                            </div>
+                            <h4>Calm Presence</h4>
+                            <div class="card-divider"></div>
+                            <p>There's a quiet strength within you — a peaceful calmness that brings serenity to those
+                                around you. It's rare, beautiful, and truly special.</p>
+                        </div>
+                        <div class="card-shine"></div>
+                    </div>
+
+                    <div class="about-card animate-on-scroll" data-index="4">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="card-icon-wrapper">
+                                <div class="icon-bg"></div>
+                                <span class="card-icon">✨</span>
+                            </div>
+                            <h4>Genuine Soul</h4>
+                            <div class="card-divider"></div>
+                            <p>People like you remind us that kindness isn't weakness — it's the most powerful and
+                                beautiful thing one can possess. You're proof of that.</p>
+                        </div>
+                        <div class="card-shine"></div>
+                    </div>
+                </div>
+
+                <div class="about-closing animate-on-scroll">
+                    <p>You are one of those rare souls who make this world softer, kinder, and more beautiful just by
+                        existing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────────────────────────
+             CAREER SECTION - Dreams & Aspirations
+        ───────────────────────────────────────────────────────────── -->
+        <section class="career-section" id="career">
+            <div class="section-bg alt"></div>
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="header-icon">🚀</span>
+                    <h3 class="section-title">Your Journey Ahead</h3>
+                    <p class="section-subtitle">The beautiful path that awaits you</p>
+                </div>
+
+                <div class="career-showcase animate-on-scroll">
+                    <div class="career-card-main">
+                        <div class="career-glow"></div>
+
+                        <div class="career-badges">
+                            <div class="career-badge">
+                                <span class="badge-icon">🎓</span>
+                                <div class="badge-content">
+                                    <span class="badge-label">Academic Path</span>
+                                    <span class="badge-text">MCA Scholar</span>
+                                </div>
+                            </div>
+                            <div class="career-badge">
+                                <span class="badge-icon">🔍</span>
+                                <div class="badge-content">
+                                    <span class="badge-label">Passion</span>
+                                    <span class="badge-text">Software Quality Testing</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="career-divider">
+                            <span class="cd-line"></span>
+                            <span class="cd-icon">◆</span>
+                            <span class="cd-line"></span>
+                        </div>
+
+                        <div class="career-message">
+                            <p>Your path in <strong>Software Quality Testing</strong> is just beginning, and what a
+                                meaningful choice it is — ensuring perfection, finding the details others miss, making
+                                systems reliable and beautiful.</p>
+                            <p>Just like how you notice and care for the people around you, you'll bring that same
+                                attention, dedication, and heart to your work. The tech world needs more people like
+                                you.</p>
+                        </div>
+
+                        <div class="career-wish-box">
+                            <div class="wish-icon-wrapper">
+                                <span class="wish-icon">⭐</span>
+                            </div>
+                            <p>May your career be filled with growth, confidence, learning, and every success you've
+                                ever dreamed of. The future is bright for you!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────────────────────────
+             FUN SECTION - The Playful Side
+        ───────────────────────────────────────────────────────────── -->
+        <section class="fun-section" id="fun">
+            <div class="section-container">
+                <div class="fun-card animate-on-scroll">
+                    <div class="fun-sparkles">
+                        <span>✨</span><span>✨</span><span>✨</span>
+                    </div>
+
+                    <div class="fun-icon-wrapper">
+                        <span class="fun-icon">🔮</span>
+                    </div>
+
+                    <h4 class="fun-title">One Mystery We Still Haven't Solved...</h4>
+
+                    <div class="fun-content">
+                        <p class="fun-text">Your Instagram account</p>
+                        <div class="fun-highlight-box">
+                            <span class="fun-emoji">👻</span>
+                            <span class="fun-highlight">Activated today, gone tomorrow</span>
+                            <span class="fun-emoji">💨</span>
+                        </div>
+                    </div>
+
+                    <p class="fun-subtext">
+                        The ultimate hide & seek champion! 🏆<br>
+                        <span class="fun-tiny">Even Sherlock couldn't keep up with your account status 😄</span>
+                    </p>
+
+                    <div class="fun-decoration">
+                        <span>~</span><span>♡</span><span>~</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────────────────────────
+             WISHES SECTION - Heartfelt Blessings
+        ───────────────────────────────────────────────────────────── -->
+        <section class="wishes-section" id="wishes">
+            <div class="section-bg"></div>
+            <div class="section-container">
+                <div class="section-header animate-on-scroll">
+                    <span class="header-icon">🌟</span>
+                    <h3 class="section-title">Wishes For Your Beautiful Future</h3>
+                    <p class="section-subtitle">From the heart, with all the love</p>
+                </div>
+
+                <div class="wishes-container">
+                    <div class="wish-card animate-on-scroll" data-index="1">
+                        <div class="wish-icon-wrapper">
+                            <span class="wish-icon">🌿</span>
+                        </div>
+                        <p>May your days be filled with <strong>peace</strong> and your heart with endless
+                            <strong>joy</strong>
+                        </p>
+                    </div>
+
+                    <div class="wish-card animate-on-scroll" data-index="2">
+                        <div class="wish-icon-wrapper">
+                            <span class="wish-icon">🌟</span>
+                        </div>
+                        <p>May <strong>success</strong> find you in every path you choose to walk</p>
+                    </div>
+
+                    <div class="wish-card animate-on-scroll" data-index="3">
+                        <div class="wish-icon-wrapper">
+                            <span class="wish-icon">💫</span>
+                        </div>
+                        <p>May you grow <strong>stronger</strong> each day while staying beautifully
+                            <strong>soft</strong>
+                        </p>
+                    </div>
+
+                    <div class="wish-card animate-on-scroll" data-index="4">
+                        <div class="wish-icon-wrapper">
+                            <span class="wish-icon">🦋</span>
+                        </div>
+                        <p>May your <strong>kindness</strong> always return to you, multiplied a thousandfold</p>
+                    </div>
+
+                    <div class="wish-card animate-on-scroll" data-index="5">
+                        <div class="wish-icon-wrapper">
+                            <span class="wish-icon">🌸</span>
+                        </div>
+                        <p>May you always remain the <strong>beautiful soul</strong> that you are, inside and out</p>
+                    </div>
+                </div>
+
+                <div class="wishes-closing animate-on-scroll">
+                    <div class="closing-decoration">
+                        <span class="cd-star">✦</span>
+                        <span class="cd-star">✦</span>
+                        <span class="cd-star">✦</span>
+                    </div>
+                    <p class="closing-text">This world is better, brighter, and more beautiful because you exist in it.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────────────────────────
+             FOOTER - The Final Touch
+        ───────────────────────────────────────────────────────────── -->
+        <footer class="footer" id="footer">
+            <div class="footer-bg"></div>
+            <div class="footer-content animate-on-scroll">
+                <div class="footer-stars">
+                    <span class="star">✦</span>
+                    <span class="star">✦</span>
+                    <span class="star">✦</span>
+                    <span class="star">✦</span>
+                    <span class="star">✦</span>
+                </div>
+
+                <div class="footer-message-wrapper">
+                    <p class="footer-message">
+                        Stay simple. Stay kind.<br>
+                        <span class="message-highlight">The world needs more hearts like yours.</span>
+                    </p>
+                </div>
+
+                <div class="footer-heart">
+                    <span class="heart-icon">♡</span>
+                    <div class="heart-pulse"></div>
+                </div>
+
+                <p class="footer-signature">
+                    Birthday wishes from your friend<br>
+                    <span class="signature-name">Shailav Malik</span>
+                    <span class="sig-sparkle">✨</span>
+                </p>
+
+                <p class="footer-note">
+                    <em>P.S. We haven't taken a photo together yet, so nothing to attach here... but the memories we'll
+                        make are coming soon! 📸</em>
+                </p>
+
+                <div class="footer-decoration">
+                    <span class="fd-line"></span>
+                    <span class="fd-text">Happy Birthday</span>
+                    <span class="fd-line"></span>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
