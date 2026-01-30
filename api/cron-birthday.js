@@ -1,7 +1,8 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
  * Vercel Cron - Birthday Email Sender
- * Schedule (UTC): 30 18 19 1 *  -> 12:00 AM IST on Jan 20
+ * Schedule (UTC): 30 18 19 1 *  -> 12:00 AM IST on Jan 20 (once per year)
+ * Optimized for minimal usage: runs only once annually
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -56,7 +57,7 @@ function isWithinIstMidnightWindow() {
   );
 
   const isJan20 = ist.getMonth() === 0 && ist.getDate() === 20;
-  const isMidnight = ist.getHours() === 0 && ist.getMinutes() <= 2;
+  const isMidnight = ist.getHours() === 0 && ist.getMinutes() <= 10;
 
   return isJan20 && isMidnight;
 }
