@@ -93,10 +93,14 @@ module.exports = async (req, res) => {
       !process.env.EMAILJS_SERVICE_ID ||
       !process.env.EMAILJS_TEMPLATE_ID
     ) {
-      console.error("Missing EmailJS credentials");
+      console.error("Missing EmailJS credentials:", {
+        hasPublicKey: !!process.env.EMAILJS_PUBLIC_KEY,
+        hasServiceId: !!process.env.EMAILJS_SERVICE_ID,
+        hasTemplateId: !!process.env.EMAILJS_TEMPLATE_ID,
+      });
       res.status(500).json({
         success: false,
-        message: "Server configuration error",
+        message: "Server configuration error - Missing credentials",
       });
       return;
     }
@@ -169,10 +173,10 @@ module.exports = async (req, res) => {
       message: "Invalid action",
     });
   } catch (error) {
-    console.error("Error in email function:", error);
+    console.error("Error in email function:", error.message || error);
     res.status(500).json({
       success: false,
-      message: "Internal server error",
+      message: "Internal server error: " + (error.message || "Unknown error"),
     });
   }
 };
