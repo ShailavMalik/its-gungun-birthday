@@ -98,11 +98,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const templateParams = {
-      to_name: "Birthday Person",
-      subject: "🎉 Happy Birthday! 🎉",
-      message: "Wishing you the most magical birthday ever! 🎂✨",
-    };
+    const templateParams = {};
 
     const result = await sendEmailViaEmailJS(templateParams);
 

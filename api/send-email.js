@@ -118,12 +118,7 @@ module.exports = async (req, res) => {
 
     // Handle test email
     if (action === "send_test_email") {
-      const templateParams = {
-        to_name: "Birthday Person",
-        subject: "🎉 Test Email - Happy Birthday! 🎉",
-        message:
-          "This is a test email from your birthday website. Wishing you the most magical birthday ever! 🎂✨",
-      };
+      const templateParams = {};
 
       const result = await sendEmailViaEmailJS(templateParams);
 
@@ -144,10 +139,7 @@ module.exports = async (req, res) => {
 
     // Handle birthday email
     if (action === "send_birthday_email") {
-      const templateParams = {
-        to_name: "Birthday Person",
-        subject: "🎉 Happy Birthday! 🎉",
-        message: "Wishing you the most magical birthday ever! 🎂✨",
+      const templateParams = {};
       };
 
       const result = await sendEmailViaEmailJS(templateParams);
