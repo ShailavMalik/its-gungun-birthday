@@ -1,16 +1,10 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
-  ],
+  "buildCommand": "echo 'Static site with serverless functions'",
+  "outputDirectory": ".",
   "crons": [
     {
       "path": "/api/cron-birthday",
       "schedule": "30 18 19 1 *"
     }
-  ],
-  "env": {}
+  ]
 }
