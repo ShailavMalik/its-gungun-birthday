@@ -95,6 +95,159 @@ function debounce(func, wait) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// EMAIL SERVICE SETUP (SECURE BACKEND)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Initialize EmailJS service
+ * Credentials are now handled securely by Node.js backend (Vercel)
+ */
+function initializeEmailJS() {
+  console.log("✅ Secure email service initialized (Node.js backend)");
+}
+
+/**
+ * Send email via secure Node.js backend
+ * Endpoint: /api/send-email
+ * This prevents exposing credentials to the client
+ */
+async function sendEmailViaBackend(action = "send_test_email") {
+  try {
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        action: action,
+      }),
+    });
+
+    const contentType = response.headers.get("content-type") || "";
+    const isJson = contentType.includes("application/json");
+
+    if (!response.ok) {
+      const fallbackMessage =
+        response.status === 405 ?
+          "API not available here. Use Vercel deployment or vercel dev."
+        : `Request failed (${response.status}).`;
+      console.error("❌ Email request failed:", response.status);
+      showNotification(`❌ ${fallbackMessage}`, "error");
+      return false;
+    }
+
+    if (!isJson) {
+      console.error("❌ Email API returned non-JSON response");
+      showNotification(
+        "❌ Email API response invalid. Check server setup.",
+        "error",
+      );
+      return false;
+    }
+
+    const data = await response.json();
+
+    if (data.success) {
+      console.log("✅ Email sent successfully!");
+      showNotification("✅ Email sent successfully!", "success");
+      return true;
+    }
+
+    console.error("❌ Failed to send email:", data.message);
+    showNotification("❌ " + data.message, "error");
+    return false;
+  } catch (error) {
+    console.error("❌ Error sending email:", error);
+    showNotification("❌ Error sending email. Please try again.", "error");
+    return false;
+  }
+}
+
+/**
+ * Send birthday email automatically
+ * Called on January 20th at 12 AM IST
+ */
+function sendBirthdayEmail() {
+  sendEmailViaBackend("send_birthday_email");
+}
+
+/**
+ * Send test email (manual trigger)
+ */
+function sendTestEmail() {
+  sendEmailViaBackend("send_test_email");
+}
+
+/**
+ * Show notification to user
+ */
+function showNotification(message, type = "info") {
+  // Create notification element
+  const notification = document.createElement("div");
+  notification.className = `notification notification-${type}`;
+  notification.textContent = message;
+
+  document.body.appendChild(notification);
+
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    notification.classList.add("fade-out");
+    setTimeout(() => notification.remove(), 500);
+  }, 5000);
+}
+
+/**
+ * Check if today is birthday and send email at 12 AM IST
+ * This should be called periodically
+ */
+function checkAndSendBirthdayEmail() {
+  const now = new Date();
+  const istTime = new Date(
+    now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" }),
+  );
+
+  const isBirthdayMonth = istTime.getMonth() === CONFIG.birthdayMonth;
+  const isBirthdayDay = istTime.getDate() === CONFIG.birthdayDay;
+  const isNoon = istTime.getHours() === 0 && istTime.getMinutes() < 1;
+
+  if (isBirthdayMonth && isBirthdayDay && isNoon) {
+    console.log("🎂 It's the birthday! Sending email...");
+    sendBirthdayEmail();
+  }
+}
+
+/**
+ * Set up automated email check
+ * Checks every minute for birthday
+ */
+function setupAutomaticEmailScheduler() {
+  // Initial check
+  checkAndSendBirthdayEmail();
+
+  // Check every minute
+  setInterval(checkAndSendBirthdayEmail, 60000);
+
+  console.log(
+    "📧 Birthday email scheduler activated for January 20th at 12 AM IST",
+  );
+}
+
+/**
+ * Initialize test email button
+ */
+function initTestEmailButton() {
+  const btn = document.getElementById("testEmailBtn");
+  if (!btn) return;
+
+  // Click handler
+  btn.addEventListener("click", () => {
+    btn.classList.add("loading");
+    sendTestEmail();
+    setTimeout(() => btn.classList.remove("loading"), 3000);
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // DATE & COUNTDOWN LOGIC
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -738,6 +891,11 @@ function initCardTilt() {
  * Main initialization function
  */
 function init() {
+  // Initialize EmailJS for automatic birthday emails
+  initializeEmailJS();
+  setupAutomaticEmailScheduler();
+  initTestEmailButton();
+
   // Initialize cursor glow (desktop only)
   if (window.matchMedia("(pointer: fine)").matches) {
     initCursorGlow();

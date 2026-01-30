@@ -1,0 +1,25 @@
+{
+  "name": "birthday-website",
+  "version": "1.0.0",
+  "description": "Beautiful birthday website with secure email functionality",
+  "main": "api/send-email.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site with serverless functions'",
+    "start": "node api/send-email.js"
+  },
+  "keywords": [
+    "birthday",
+    "email",
+    "vercel",
+    "serverless"
+  ],
+  "author": "Malik",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

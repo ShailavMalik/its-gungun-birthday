@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Quicksand:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <!-- EmailJS for automatic email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
 </head>
 
 <body>
@@ -587,6 +589,12 @@
                     <span class="fd-text">Happy Birthday</span>
                     <span class="fd-line"></span>
                 </div>
+
+                <!-- Test Email Button (hidden by default) -->
+                <button id="testEmailBtn" class="test-email-btn" title="Send email">
+                    <span class="btn-icon">📧</span>
+                    <span class="btn-text">Send Email</span>
+                </button>
             </div>
         </footer>
 
