@@ -13,6 +13,7 @@ async function sendEmailViaEmailJS(templateParams) {
     const data = JSON.stringify({
       service_id: process.env.EMAILJS_SERVICE_ID,
       template_id: process.env.EMAILJS_TEMPLATE_ID,
+      user_id: process.env.EMAILJS_PUBLIC_KEY,
       accessToken: process.env.EMAILJS_PRIVATE_KEY,
       template_params: templateParams,
     });
@@ -78,6 +79,7 @@ module.exports = async (req, res) => {
   }
 
   if (
+    !process.env.EMAILJS_PUBLIC_KEY ||
     !process.env.EMAILJS_SERVICE_ID ||
     !process.env.EMAILJS_TEMPLATE_ID ||
     !process.env.EMAILJS_PRIVATE_KEY
