@@ -140,7 +140,6 @@ module.exports = async (req, res) => {
     // Handle birthday email
     if (action === "send_birthday_email") {
       const templateParams = {};
-      };
 
       const result = await sendEmailViaEmailJS(templateParams);
 
